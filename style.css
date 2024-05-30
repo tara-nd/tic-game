@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: black;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f;
+}
+
+#nameContainer, #choiceContainer, #scoreContainer, #resultContainer {
+    margin-bottom: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #00f;
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+button {
+    font-family: 'Orbitron', sans-serif;
+    background: rgba(0, 0, 0, 0.7);
+    color: #00f;
+    border: 1px solid #00f;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+#resultContainer {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: rise 10s infinite ease-in-out;
+}
+
+.bubble.blue {
+    background-color: rgba(173, 216, 230, 0.8);
+}
+
+.bubble.rose {
+    background-color: rgba(255, 182, 193, 0.8);
+}
+
+.bubble.purple {
+    background-color: rgba(221, 160, 221, 0.8);
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-800px) translateX(50px);
+    }
+    100% {
+        transform: translateY(-1600px) translateX(0);
+    }
+}
+
+/* Additional styling for bubbles to animate across the screen */
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: rise 10s infinite ease-in-out;
+}
+
+.bubble.blue {
+    background-color: rgba(173, 216, 230, 0.8);
+}
+
+.bubble.rose {
+    background-color: rgba(255, 182, 193, 0.8);
+}
+
+.bubble.purple {
+    background-color: rgba(221, 160, 221, 0.8);
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-800px) translateX(50px);
+    }
+    100% {
+        transform: translateY(-1600px) translateX(0);
+    }
+}
